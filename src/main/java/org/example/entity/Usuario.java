@@ -15,8 +15,6 @@ public class Usuario {
     private boolean vigencia;
     @OneToOne
     private Cliente cliente;
-
-
     public int getId() {
         return id;
     }
