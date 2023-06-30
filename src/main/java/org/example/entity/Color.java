@@ -7,7 +7,7 @@ public class Color {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int idcolor;
     @Column(length = 10)
     @Enumerated(EnumType.STRING)
     private Color.ColoresEnum colores;
@@ -22,12 +22,12 @@ public class Color {
     @MapsId
     private Producto producto;
 
-    public int getId() {
-        return id;
+    public int getIdcolor() {
+        return idcolor;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdcolor(int idcolor) {
+        this.idcolor = idcolor;
     }
 
     public ColoresEnum getColores() {

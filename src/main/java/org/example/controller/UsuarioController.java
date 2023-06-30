@@ -17,8 +17,8 @@ public class UsuarioController {
     }
     @PostMapping("/login")
     public GenericResponse<Usuario> login(HttpServletRequest request){
-        String email = request.getParameter("email");
-        String contrasenia = request.getParameter("pass");
+        String email = request.getParameter("correo");
+        String contrasenia = request.getParameter("clave");
         return this.service.login(email, contrasenia);
     }
     @PostMapping

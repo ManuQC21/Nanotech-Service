@@ -19,8 +19,8 @@ public class UsuarioService {
         this.repository = repository;
     }
     //Método para iniciar sesión
-    public GenericResponse<Usuario> login(String email, String contrasenia){
-        Optional<Usuario> optU = this.repository.login(email, contrasenia);
+    public GenericResponse<Usuario> login(String correo, String clave){
+        Optional<Usuario> optU = this.repository.login(correo, clave);
         if(optU.isPresent()){
             return new GenericResponse<Usuario>(TIPO_AUTH, RPTA_OK, "Haz iniciado sesión correctamente", optU.get());
         }else{
@@ -37,4 +37,5 @@ public class UsuarioService {
             return new GenericResponse(TIPO_DATA, RPTA_OK, "Datos del usuario actualizados", this.repository.save(u));
         }
     }
+
 }

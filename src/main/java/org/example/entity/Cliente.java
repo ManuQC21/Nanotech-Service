@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int idcliente;
     @Column(length = 100)
     private String Nombres;
     @Column(length = 100)
@@ -30,12 +30,12 @@ public class Cliente {
     @OneToOne
     private DocumentoAlmacenado Foto;
 
-    public int getId() {
-        return id;
+    public int getIdcliente() {
+        return idcliente;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdcliente(int idcliente) {
+        this.idcliente = idcliente;
     }
 
     public String getNombres() {

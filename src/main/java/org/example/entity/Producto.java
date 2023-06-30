@@ -113,12 +113,12 @@ public class Producto {
         Color = color;
     }
 
-    public org.example.entity.Categoria getCategoria() {
+    public Categoria getCategoria() {
         return Categoria;
     }
 
-    public void setCategoria(org.example.entity.Categoria categoria) {
-        Categoria = categoria;
+    public void setCategoria(Categoria categoria) {
+        this.Categoria = categoria;
     }
 
     public boolean isStock() {
