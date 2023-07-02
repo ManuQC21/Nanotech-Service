@@ -8,37 +8,37 @@ public class Producto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column(length = 100)
-    private String Nombre;
+    private String nombre;
     @Column(length = 100)
     @Enumerated(EnumType.STRING)
-    private MedidaEnum Medida;
+    private MedidaEnum medida;
     public enum MedidaEnum {
         Unidades,
         Caja
     }
     @Column(length = 20)
-    private String Documento;
+    private String documento;
     @Column
-    private int Cantidad;
+    private int cantidad;
     @Column(length = 80)
-    private String RazonSocial;
+    private String razonsocial;
     @Column
-    private int Precio;
+    private int precio;
     @Column(length = 1000)
-    private String Descripcion;
+    private String descripcion;
 
     @Column(length = 40)
-    private String Color;
+    private String color;
     @OneToOne
-    private Categoria Categoria;
+    private Categoria categoria;
     @Column
-    private boolean Stock;
+    private boolean stock;
     @Column
     private boolean vigencia;
     @Column
     private boolean recomendado;
     @OneToOne
-    private DocumentoAlmacenado Foto;
+    private DocumentoAlmacenado foto;
 
     public int getId() {
         return id;
@@ -49,84 +49,84 @@ public class Producto {
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
     public void setNombre(String nombre) {
-        Nombre = nombre;
+        this.nombre = nombre;
     }
 
     public MedidaEnum getMedida() {
-        return Medida;
+        return medida;
     }
 
     public void setMedida(MedidaEnum medida) {
-        Medida = medida;
+        this.medida = medida;
     }
 
     public String getDocumento() {
-        return Documento;
+        return documento;
     }
 
     public void setDocumento(String documento) {
-        Documento = documento;
+        this.documento = documento;
     }
 
     public int getCantidad() {
-        return Cantidad;
+        return cantidad;
     }
 
     public void setCantidad(int cantidad) {
-        Cantidad = cantidad;
+        this.cantidad = cantidad;
     }
 
-    public String getRazonSocial() {
-        return RazonSocial;
+    public String getRazonsocial() {
+        return razonsocial;
     }
 
-    public void setRazonSocial(String razonSocial) {
-        RazonSocial = razonSocial;
+    public void setRazonsocial(String razonsocial) {
+        this.razonsocial = razonsocial;
     }
 
     public int getPrecio() {
-        return Precio;
+        return precio;
     }
 
     public void setPrecio(int precio) {
-        Precio = precio;
+        this.precio = precio;
     }
 
     public String getDescripcion() {
-        return Descripcion;
+        return descripcion;
     }
 
     public void setDescripcion(String descripcion) {
-        Descripcion = descripcion;
+        this.descripcion = descripcion;
     }
 
 
     public String getColor() {
-        return Color;
+        return color;
     }
 
     public void setColor(String color) {
-        Color = color;
+        this.color = color;
     }
 
     public Categoria getCategoria() {
-        return Categoria;
+        return categoria;
     }
 
     public void setCategoria(Categoria categoria) {
-        this.Categoria = categoria;
+        this.categoria = categoria;
     }
 
     public boolean isStock() {
-        return Stock;
+        return stock;
     }
 
     public void setStock(boolean stock) {
-        Stock = stock;
+        this.stock = stock;
     }
 
     public boolean isRecomendado() {
@@ -138,11 +138,11 @@ public class Producto {
     }
 
     public DocumentoAlmacenado getFoto() {
-        return Foto;
+        return foto;
     }
 
     public void setFoto(DocumentoAlmacenado foto) {
-        Foto = foto;
+        this.foto = foto;
     }
 
     public boolean isVigencia() {

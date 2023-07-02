@@ -8,7 +8,7 @@ public class DetallePedido {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idpedido;
     @Column
-    private int Cantidad;
+    private int cantidad;
     @Column
     private Double precio;
     @ManyToOne
@@ -25,11 +25,11 @@ public class DetallePedido {
     }
 
     public int getCantidad() {
-        return Cantidad;
+        return cantidad;
     }
 
     public void setCantidad(int cantidad) {
-        this.Cantidad = cantidad;
+        this.cantidad = cantidad;
     }
 
     public Double getPrecio() {

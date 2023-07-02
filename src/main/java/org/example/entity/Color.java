@@ -17,7 +17,7 @@ public class Color {
         Plomo
     }
     @Column(length = 30)
-    private int Disponibilidad;
+    private int disponibilidad;
     @OneToOne
     @MapsId
     private Producto producto;
@@ -39,11 +39,11 @@ public class Color {
     }
 
     public int getDisponibilidad() {
-        return Disponibilidad;
+        return disponibilidad;
     }
 
     public void setDisponibilidad(int disponibilidad) {
-        Disponibilidad = disponibilidad;
+        this.disponibilidad = disponibilidad;
     }
 
     public Producto getProducto() {
