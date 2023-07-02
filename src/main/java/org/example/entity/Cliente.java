@@ -6,129 +6,129 @@ import javax.persistence.*;
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idcliente;
+    private int id;
     @Column(length = 100)
-    private String Nombres;
+    private String nombres;
     @Column(length = 100)
-    private String ApellidoPaterno;
+    private String apellidoPaterno;
     @Column(length = 100)
-    private String ApellidoMaterno;
+    private String apellidoMaterno;
     @Column(length = 20)
-    private String TipoDoc;
+    private String tipoDoc;
     @Column(length = 11)
-    private String NumDoc;
+    private String numDoc;
     @Column(length = 500)
-    private String DireccionEnvio;
+    private String direccionEnvio;
     @Column(length = 100)
-    private String Departamento;
+    private String departamento;
     @Column(length = 100)
-    private String Provincia;
+    private String provincia;
     @Column(length = 100)
-    private String Distrito;
+    private String distrito;
     @Column(length = 9)
-    private String Telefono;
+    private String telefono;
     @OneToOne
-    private DocumentoAlmacenado Foto;
+    private DocumentoAlmacenado foto;
 
-    public int getIdcliente() {
-        return idcliente;
+    public int getId() {
+        return id;
     }
 
-    public void setIdcliente(int idcliente) {
-        this.idcliente = idcliente;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombres() {
-        return Nombres;
+        return nombres;
     }
 
     public void setNombres(String nombres) {
-        Nombres = nombres;
+        this.nombres = nombres;
     }
 
     public String getApellidoPaterno() {
-        return ApellidoPaterno;
+        return apellidoPaterno;
     }
 
     public void setApellidoPaterno(String apellidoPaterno) {
-        ApellidoPaterno = apellidoPaterno;
+        this.apellidoPaterno = apellidoPaterno;
     }
 
     public String getApellidoMaterno() {
-        return ApellidoMaterno;
+        return apellidoMaterno;
     }
 
     public void setApellidoMaterno(String apellidoMaterno) {
-        ApellidoMaterno = apellidoMaterno;
+        this.apellidoMaterno = apellidoMaterno;
     }
 
     public String getTipoDoc() {
-        return TipoDoc;
+        return tipoDoc;
     }
 
     public void setTipoDoc(String tipoDoc) {
-        TipoDoc = tipoDoc;
+        this.tipoDoc = tipoDoc;
     }
 
     public String getNumDoc() {
-        return NumDoc;
+        return numDoc;
     }
 
     public void setNumDoc(String numDoc) {
-        NumDoc = numDoc;
+        this.numDoc = numDoc;
     }
 
     public String getDireccionEnvio() {
-        return DireccionEnvio;
+        return direccionEnvio;
     }
 
     public void setDireccionEnvio(String direccionEnvio) {
-        DireccionEnvio = direccionEnvio;
+        this.direccionEnvio = direccionEnvio;
     }
 
     public String getDepartamento() {
-        return Departamento;
+        return departamento;
     }
 
     public void setDepartamento(String departamento) {
-        Departamento = departamento;
+        this.departamento = departamento;
     }
 
     public String getProvincia() {
-        return Provincia;
+        return provincia;
     }
 
     public void setProvincia(String provincia) {
-        Provincia = provincia;
+        this.provincia = provincia;
     }
 
     public String getDistrito() {
-        return Distrito;
+        return distrito;
     }
 
     public void setDistrito(String distrito) {
-        Distrito = distrito;
+        this.distrito = distrito;
     }
 
     public String getTelefono() {
-        return Telefono;
+        return telefono;
     }
 
-    public void setTelefono(String telefono) {
-        Telefono = telefono;
+    public void setTelefono(String delefono) {
+        this.telefono = delefono;
     }
 
     public DocumentoAlmacenado getFoto() {
-        return Foto;
+        return foto;
     }
 
-    public void setFoto(DocumentoAlmacenado foto) {
-        Foto = foto;
+    public void setFoto(DocumentoAlmacenado doto) {
+        this.foto = doto;
     }
 
     public String getNombreCompletoCiente(){
-        return this.Nombres != null && this.ApellidoPaterno != null && this.ApellidoMaterno != null ?
-                this.Nombres + " " + this.ApellidoPaterno + " " + this.ApellidoMaterno: "-----";
+        return this.nombres != null && this.apellidoPaterno != null && this.apellidoMaterno != null ?
+                this.nombres + " " + this.apellidoPaterno + " " + this.apellidoMaterno: "-----";
     }
 
 }
