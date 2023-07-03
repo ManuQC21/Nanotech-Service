@@ -1,6 +1,8 @@
 package org.example.entity;
 
 import javax.persistence.*;
+import java.util.List;
+
 @Entity
 public class Producto {
 
@@ -14,21 +16,23 @@ public class Producto {
     private MedidaEnum medida;
     public enum MedidaEnum {
         Unidades,
-        Caja
+        Cajas
     }
+
     @Column(length = 20)
     private String documento;
     @Column
     private int cantidad;
     @Column(length = 80)
-    private String razonsocial;
+    private String razonSocial;
     @Column
     private int precio;
     @Column(length = 1000)
     private String descripcion;
 
-    @Column(length = 40)
-    private String color;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "producto_id")
+    private List<Color> colores;
     @OneToOne
     private Categoria categoria;
     @Column
@@ -56,14 +60,6 @@ public class Producto {
         this.nombre = nombre;
     }
 
-    public MedidaEnum getMedida() {
-        return medida;
-    }
-
-    public void setMedida(MedidaEnum medida) {
-        this.medida = medida;
-    }
-
     public String getDocumento() {
         return documento;
     }
@@ -80,12 +76,12 @@ public class Producto {
         this.cantidad = cantidad;
     }
 
-    public String getRazonsocial() {
-        return razonsocial;
+    public String getRazonSocial() {
+        return razonSocial;
     }
 
-    public void setRazonsocial(String razonsocial) {
-        this.razonsocial = razonsocial;
+    public void setRazonSocial(String razonSocial) {
+        this.razonSocial = razonSocial;
     }
 
     public int getPrecio() {
@@ -104,15 +100,6 @@ public class Producto {
         this.descripcion = descripcion;
     }
 
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
     public Categoria getCategoria() {
         return categoria;
     }
@@ -123,6 +110,22 @@ public class Producto {
 
     public boolean isStock() {
         return stock;
+    }
+
+    public MedidaEnum getMedida() {
+        return medida;
+    }
+
+    public void setMedida(MedidaEnum medida) {
+        this.medida = medida;
+    }
+
+    public List<Color> getColores() {
+        return colores;
+    }
+
+    public void setColores(List<Color> colores) {
+        this.colores = colores;
     }
 
     public void setStock(boolean stock) {
@@ -144,11 +147,9 @@ public class Producto {
     public void setFoto(DocumentoAlmacenado foto) {
         this.foto = foto;
     }
-
     public boolean isVigencia() {
         return vigencia;
     }
-
     public void setVigencia(boolean vigencia) {
         this.vigencia = vigencia;
     }

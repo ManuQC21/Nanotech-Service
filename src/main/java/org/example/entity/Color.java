@@ -8,7 +8,7 @@ public class Color {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idcolor;
-    @Column(length = 10)
+    @Column(length = 30)
     @Enumerated(EnumType.STRING)
     private Color.ColoresEnum colores;
     public enum ColoresEnum {
@@ -18,9 +18,8 @@ public class Color {
     }
     @Column(length = 30)
     private int disponibilidad;
-    @OneToOne
-    @MapsId
-    private Producto producto;
+    @Column(name = "producto_id")
+    private int idProducto;
 
     public int getIdcolor() {
         return idcolor;
@@ -46,11 +45,11 @@ public class Color {
         this.disponibilidad = disponibilidad;
     }
 
-    public Producto getProducto() {
-        return producto;
+    public int getIdProducto() {
+        return idProducto;
     }
 
-    public void setProducto(Producto producto) {
-        this.producto = producto;
+    public void setIdProducto(int idProducto) {
+        this.idProducto = idProducto;
     }
 }

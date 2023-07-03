@@ -10,7 +10,6 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("api/cliente")
 public class ClienteController {
-
     private final ClienteService service;
 
     public ClienteController(ClienteService service) {
@@ -27,5 +26,4 @@ public class ClienteController {
         c.setId(id);
         return this.service.save(c);
     }
-
 }
