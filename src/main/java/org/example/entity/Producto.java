@@ -12,17 +12,12 @@ public class Producto {
     @Column(length = 100)
     private String nombre;
     @Column(length = 100)
-    @Enumerated(EnumType.STRING)
-    private MedidaEnum medida;
-    public enum MedidaEnum {
-        Unidades,
-        Cajas
-    }
+    private String medida;
 
     @Column(length = 20)
     private String documento;
     @Column
-    private int cantidad;
+    private int stock;
     @Column(length = 80)
     private String razonSocial;
     @Column
@@ -30,13 +25,10 @@ public class Producto {
     @Column(length = 1000)
     private String descripcion;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "producto_id")
-    private List<Color> colores;
+    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ProductoColor> productoColores;
     @OneToOne
     private Categoria categoria;
-    @Column
-    private boolean stock;
     @Column
     private boolean vigencia;
     @Column
@@ -68,12 +60,12 @@ public class Producto {
         this.documento = documento;
     }
 
-    public int getCantidad() {
-        return cantidad;
+    public int getStock() {
+        return stock;
     }
 
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
+    public void setStock(int cantidad) {
+        this.stock = cantidad;
     }
 
     public String getRazonSocial() {
@@ -108,28 +100,20 @@ public class Producto {
         this.categoria = categoria;
     }
 
-    public boolean isStock() {
-        return stock;
-    }
-
-    public MedidaEnum getMedida() {
+    public String getMedida() {
         return medida;
     }
 
-    public void setMedida(MedidaEnum medida) {
+    public void setMedida(String medida) {
         this.medida = medida;
     }
 
-    public List<Color> getColores() {
-        return colores;
+    public List<ProductoColor> getProductoColores() {
+        return productoColores;
     }
 
-    public void setColores(List<Color> colores) {
-        this.colores = colores;
-    }
-
-    public void setStock(boolean stock) {
-        this.stock = stock;
+    public void setProductoColores(List<ProductoColor> productoColores) {
+        this.productoColores = productoColores;
     }
 
     public boolean isRecomendado() {
