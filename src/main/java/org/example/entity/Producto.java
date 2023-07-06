@@ -21,7 +21,7 @@ public class Producto {
     @Column(length = 80)
     private String razonSocial;
     @Column
-    private int precio;
+    private Double precio;
     @Column(length = 1000)
     private String descripcion;
 
@@ -76,11 +76,11 @@ public class Producto {
         this.razonSocial = razonSocial;
     }
 
-    public int getPrecio() {
+    public Double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(int precio) {
+    public void setPrecio(Double precio) {
         this.precio = precio;
     }
 
