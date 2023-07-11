@@ -8,21 +8,13 @@ public class Categoria {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column(length = 100)
-    private String Nombre;
-    @Column(name = "stock")
-    private boolean Stock;
+    private String nombre;
+    @Column
+    private boolean vigencia;
     @OneToOne
-    private DocumentoAlmacenado Foto;
-
-    public Categoria(int id, String nombre, boolean stock, DocumentoAlmacenado foto) {
-        this.id = id;
-        Nombre = nombre;
-        Stock = stock;
-        Foto = foto;
-    }
+    private DocumentoAlmacenado foto;
 
     public Categoria() {
-
     }
 
     public int getId() {
@@ -34,26 +26,26 @@ public class Categoria {
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
     public void setNombre(String nombre) {
-        Nombre = nombre;
+        this.nombre = nombre;
     }
 
-    public boolean isStock() {
-        return Stock;
+    public boolean isVigencia() {
+        return vigencia;
     }
 
-    public void setStock(boolean stock) {
-        Stock = stock;
+    public void setVigencia(boolean vigencia) {
+        this.vigencia = vigencia;
     }
 
     public DocumentoAlmacenado getFoto() {
-        return Foto;
+        return foto;
     }
 
     public void setFoto(DocumentoAlmacenado foto) {
-        Foto = foto;
+        this.foto = foto;
     }
 }

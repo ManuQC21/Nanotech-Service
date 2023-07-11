@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class DetallePedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idpedido;
+    private int id;
     @Column
     private int cantidad;
     @Column
@@ -16,12 +16,12 @@ public class DetallePedido {
     @ManyToOne
     private Pedido pedido;
 
-    public int getIdpedido() {
-        return idpedido;
+    public int getId() {
+        return id;
     }
 
-    public void setIdpedido(int idpedido) {
-        this.idpedido = idpedido;
+    public void setId(int idpedido) {
+        this.id = idpedido;
     }
 
     public int getCantidad() {
