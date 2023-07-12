@@ -24,9 +24,6 @@ public class Producto {
     private Double precio;
     @Column(length = 1000)
     private String descripcion;
-
-    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<ProductoColor> productoColores;
     @OneToOne
     private Categoria categoria;
     @Column
@@ -106,14 +103,6 @@ public class Producto {
 
     public void setMedida(String medida) {
         this.medida = medida;
-    }
-
-    public List<ProductoColor> getProductoColores() {
-        return productoColores;
-    }
-
-    public void setProductoColores(List<ProductoColor> productoColores) {
-        this.productoColores = productoColores;
     }
 
     public boolean isRecomendado() {
