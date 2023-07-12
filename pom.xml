@@ -11,6 +11,7 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <start-class>org.example.Main</start-class>
     </properties>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -79,4 +80,25 @@
             <version>5.2.5.RELEASE</version>
         </dependency>
     </dependencies>
+    <build>
+        <plugins>
+            <!-- Otros plugins existentes aquí -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.5.4</version> <!-- Reemplaza con la versión más reciente -->
+                <configuration>
+                    <mainClass>rg.example.Main</mainClass>
+                    <layout>JAR</layout>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
